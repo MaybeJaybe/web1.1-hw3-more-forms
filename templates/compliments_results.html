@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Compliments Results
+{% endblock %}
+
+{% block content %}
+
+<p>Thank you {{users_name}}!</p><br>
+{% if wants_compliments == "yes" %}
+    <p>I have some good compliments for you!</p><br>
+
+    <ul id='compliments'>
+        {% for word in compliments %}
+        <li> You are {{word}} </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+<p>Thats okay. I hope you have a good day!</p>
+
+{% endif %}
+{% endblock %}
