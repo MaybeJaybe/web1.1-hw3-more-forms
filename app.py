@@ -51,8 +51,8 @@ def compliments():
 @app.route('/compliments_results')
 def compliments_results():
     """Show the user some compliments."""
-    wants_compliments = request.args.get('wants_compliments'),
-    num_compliments = int(request.args.get('num_compliments')),
+    wants_compliments = request.args.get('wants_compliments')
+    num_compliments = int(request.args.get('num_compliments'))
     compliments = []
 
     if wants_compliments == "yes":
