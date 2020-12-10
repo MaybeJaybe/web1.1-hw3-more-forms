@@ -143,7 +143,7 @@ def apply_filter(file_path, filter_name):
 @app.route('/image_filter', methods=['GET', 'POST'])
 def image_filter():
     """Filter an image uploaded by the user, using the Pillow library."""
-    filter_type = filter_types_dict.keys()
+    filter_types = filter_types_dict.keys()
 
     if request.method == 'POST':
         
@@ -158,7 +158,7 @@ def image_filter():
         image_url = f'/static/images/{image.filename}'
 
         context = {
-            'filter_type': filter_type,
+            'filter_types': filter_types,
             'image': image,
             'image_url': image_url
         }
@@ -167,7 +167,7 @@ def image_filter():
 
     else: # if it's a GET request
         context = {
-            'filter_type': filter_type,
+            'filter_types': filter_types,
             'image': None,
             'image_url': None
         }
